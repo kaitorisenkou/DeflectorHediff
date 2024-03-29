@@ -1,13 +1,15 @@
-﻿using CompDeflector;
-using HarmonyLib;
-using RimWorld;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+
+using HarmonyLib;
 using Verse;
+using RimWorld;
+
+using CompDeflector;
 
 namespace DeflectorHediff {
     [StaticConstructorOnStartup]

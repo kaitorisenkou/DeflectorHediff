@@ -1,9 +1,11 @@
-﻿using CompDeflector;
+﻿using System;
+
 using HarmonyLib;
 using RimWorld;
-using System;
 using Verse;
 using Verse.AI;
+
+using CompDeflector;
 
 namespace DeflectorHediff {
     public class HediffComp_Deflector : HediffComp {
