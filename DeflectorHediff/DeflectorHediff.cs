@@ -9,11 +9,9 @@ using HarmonyLib;
 using Verse;
 using RimWorld;
 
-using CompDeflector;
-
 namespace DeflectorHediff {
     [StaticConstructorOnStartup]
-    public class DeflectorHediff {
+    public partial class DeflectorHediff {
         static DeflectorHediff() {
             Log.Message("[DeflectorHediff] Now active");
             var harmony = new Harmony("kaitorisenkou.DeflectorHediff");

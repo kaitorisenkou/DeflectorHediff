@@ -5,8 +5,6 @@ using RimWorld;
 using Verse;
 using Verse.AI;
 
-using CompDeflector;
-
 namespace DeflectorHediff {
     public class HediffComp_Deflector : HediffComp {
         public HediffCompProperties_Deflector Props {
@@ -58,6 +56,9 @@ namespace DeflectorHediff {
         }
         public void GiveDeflectJob(DamageInfo dinfo) {
             Pawn enemy = dinfo.Instigator as Pawn;
+#if DEBUG
+            Log.Message("deflect to "+enemy.Name);
+#endif
             if (enemy == null)
                 return;
             this.ResolveDeflectVerb();
@@ -67,7 +68,7 @@ namespace DeflectorHediff {
             if (successRate > -2) 
                 ReflectLearn();
             lastAccuracyRoll = successRate;
-            Job job = JobMaker.MakeJob(CompDeflectorDefOf.CastDeflectVerb);
+            Job job = JobMaker.MakeJob(DeflectorDefOf.CastDeflectVerb);
             job.playerForced = true;
             job.locomotionUrgency = LocomotionUrgency.Sprint;
             Pawn_EquipmentTracker equipment = enemy.equipment;
